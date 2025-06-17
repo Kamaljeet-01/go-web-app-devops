@@ -48,6 +48,8 @@ window.onload = function() {
         document.getElementById('description').textContent = description;
         document.getElementById('apod-image').src = imageUrl;
         document.getElementById('apod-image').alt = title;
+        console.log("Image URL: " + imageUrl);
+
     }
 
     // Event listener for back button on result page
