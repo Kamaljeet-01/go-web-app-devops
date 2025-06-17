@@ -24,6 +24,10 @@ func contactPage(w http.ResponseWriter, r *http.Request) {
 	// Render the contact html page
 	http.ServeFile(w, r, "static/contact.html")
 }
+func resultPage(w http.ResponseWriter, r *http.Request) {
+	// Render the contact html page
+	http.ServeFile(w, r, "static/result.html")
+}
 
 func main() {
 
@@ -32,9 +36,10 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	http.HandleFunc("/", homePage)
-	http.HandleFunc("/index", indexPage)
-	http.HandleFunc("/about", aboutPage)
-	http.HandleFunc("/contact", contactPage)
+	http.HandleFunc("/static/index", indexPage)
+	http.HandleFunc("/static/about", aboutPage)
+	http.HandleFunc("/static/contact", contactPage)
+	http.HandleFunc("/static/result.html", resultPage)
 
 	err := http.ListenAndServe("0.0.0.0:8080", nil)
 	if err != nil {

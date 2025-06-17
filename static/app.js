@@ -17,7 +17,7 @@ async function fetchPicture(date) {
         localStorage.setItem('imageUrl', data.url);
 
         // Redirect to result page
-        window.location.href = 'result.html';
+        window.location.href = '/static/result.html';
 
     } catch (error) {
         console.error('Error fetching picture:', error);
@@ -55,7 +55,7 @@ window.onload = function() {
     // Event listener for back button on result page
     if (document.getElementById('backButton')) {
         document.getElementById('backButton').addEventListener('click', function() {
-            window.location.href = 'index.html';
+            window.location.href = '/static/index.html';
         });
     }
 };
